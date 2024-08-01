@@ -1,0 +1,36 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "description": "chrome extension",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrdzen/chrome-extension-example.git"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "build:firefox": "cross-env __FIREFOX__=true turbo build",
+    "dev-server": "pnpm -F hmr ready && pnpm -F hmr dev",
+    "dev": "turbo ready && turbo watch dev --concurrency 20",
+    "dev:firefox": "turbo ready && cross-env __FIREFOX__=true turbo watch dev --concurrency 20"
+  },
+  "type": "module",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "turbo": "^2.0.11",
+    "typescript": "5.5.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": ">=18.12.0"
+  }
+}
